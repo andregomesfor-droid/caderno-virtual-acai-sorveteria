@@ -1,0 +1,23 @@
+:root { --berry:#6b1e5d; --berry-dark:#411039; --cream:#fff8ee; --peach:#f7dfc8; --ink:#2f2430; --muted:#716772; --line:#eadbd4; --green:#28775c; }
+* { box-sizing:border-box; }
+body { margin:0; background:linear-gradient(145deg,#fff8ee 0%,#f9ebdd 100%); color:var(--ink); font-family:Arial,Helvetica,sans-serif; }
+.app-shell { max-width:1120px; margin:auto; padding:38px 24px 64px; }
+.hero { display:flex; justify-content:space-between; align-items:flex-start; gap:24px; margin-bottom:26px; }
+.eyebrow { color:var(--berry); margin:0 0 5px; font-size:.8rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+h1,h2,h3,p { margin-top:0; } h1 { font-size:2.25rem; margin-bottom:8px; } h2 { font-size:1.2rem; margin-bottom:5px; } h3 { font-size:.95rem; margin-bottom:10px; }
+.subtitle,.panel-title p { color:var(--muted); margin-bottom:0; }
+.summary { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; margin-bottom:22px; }
+.summary article,.panel { background:#fff; border:1px solid var(--line); border-radius:16px; box-shadow:0 8px 24px rgba(89,43,72,.06); }
+.summary article { padding:18px 20px; } .summary span { display:block; color:var(--muted); font-size:.88rem; margin-bottom:6px; } .summary strong { font-size:1.5rem; color:var(--berry-dark); }
+.layout { display:grid; grid-template-columns:1.1fr .9fr; gap:22px; margin-bottom:22px; }.panel { padding:24px; }
+form { display:grid; gap:13px; margin-top:20px; } label { display:grid; gap:6px; font-size:.9rem; font-weight:700; } label span { color:var(--muted); font-weight:400; }
+input,select { width:100%; border:1px solid #d6c6c7; background:#fffdfb; border-radius:8px; padding:11px 12px; color:var(--ink); font:inherit; }
+input:focus,select:focus { outline:3px solid rgba(107,30,93,.18); border-color:var(--berry); }
+button { border:0; border-radius:8px; padding:12px 16px; font:700 .95rem Arial,sans-serif; cursor:pointer; }.primary-btn { background:var(--berry); color:#fff; }.primary-btn:hover { background:var(--berry-dark); }.secondary-btn { background:var(--peach); color:var(--berry-dark); }
+.outline-btn { background:transparent; color:var(--berry); border:1px solid var(--berry); }.outline-btn:hover { background:#f8e8f4; }
+.product-form { grid-template-columns:1fr auto; align-items:end; }.product-list-wrap { margin-top:25px; border-top:1px solid var(--line); padding-top:19px; }.product-list { list-style:none; padding:0; margin:0; display:grid; gap:7px; }.product-list li { display:flex; justify-content:space-between; align-items:center; background:#fff8f3; padding:9px 10px; border-radius:7px; }.remove-product,.delete-sale { background:transparent; padding:3px 6px; color:#9e284e; text-decoration:underline; font-size:.82rem; }
+.records-head { display:flex; justify-content:space-between; align-items:end; gap:20px; }.date-filter { width:180px; }.table-wrap { overflow:auto; margin-top:20px; }table { width:100%; border-collapse:collapse; font-size:.92rem; }th { text-align:left; color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.04em; }th,td { padding:12px 9px; border-bottom:1px solid var(--line); } td:nth-child(3),td:nth-child(4) { white-space:nowrap; }.empty-message { color:var(--muted); text-align:center; padding:20px 0 5px; margin:0; } #toast { position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:var(--green); color:#fff; padding:12px 18px; border-radius:8px; opacity:0; transition:opacity .2s; pointer-events:none; }#toast.show { opacity:1; }
+.print-report { display:none; }
+@media (max-width:720px) { .app-shell { padding:24px 15px 44px; }.hero,.records-head { display:grid; }.summary,.layout { grid-template-columns:1fr; }.product-form { grid-template-columns:1fr; }.date-filter { width:100%; }.outline-btn { width:100%; } }
+@page { size:216mm 330mm; margin:13mm; }
+@media print { body { background:#fff; color:#111; font-family:Arial,Helvetica,sans-serif; }.app-shell,#toast { display:none !important; }.print-report { display:block; }.print-report header { border-bottom:2px solid #111; padding-bottom:8mm; }.print-report header p { margin:0 0 2mm; font-size:11pt; }.print-report h1 { margin:0; font-size:20pt; }.print-summary { display:grid; grid-template-columns:repeat(3,1fr); gap:5mm; margin:8mm 0; }.print-summary div { border:1px solid #555; padding:5mm; }.print-summary span { display:block; font-size:10pt; }.print-summary strong { display:block; margin-top:2mm; font-size:16pt; }.print-report table { font-size:10pt; }.print-report th,.print-report td { border-bottom:1px solid #777; padding:3mm 2mm; }.print-report footer { margin-top:10mm; font-size:9pt; color:#555; text-align:center; } }
