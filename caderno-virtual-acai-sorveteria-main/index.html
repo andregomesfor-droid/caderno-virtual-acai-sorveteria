@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6b1e5d">
+  <title>Caderno Virtual | Açaí & Sorveteria</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Açaí & Sorveteria</p>
+        <h1>Caderno Virtual</h1>
+        <p class="subtitle">Anote cada pedido e feche o dia sem fazer contas no caderno.</p>
+      </div>
+      <button class="outline-btn print-hide" id="printReport" type="button">Gerar / imprimir PDF</button>
+    </header>
+
+    <section class="summary" aria-label="Resumo do dia">
+      <article><span>Vendas do dia</span><strong id="dailyTotal">R$ 0,00</strong></article>
+      <article><span>Produtos vendidos</span><strong id="dailyItems">0</strong></article>
+      <article><span>Pedidos anotados</span><strong id="dailyOrders">0</strong></article>
+    </section>
+
+    <div class="layout">
+      <section class="panel entry-panel">
+        <div class="panel-title"><h2>Anotar pedido</h2><p>Registre o que saiu agora.</p></div>
+        <form id="saleForm">
+          <label>Data
+            <input id="saleDate" type="date" required>
+          </label>
+          <label>Produto
+            <select id="saleProduct" required><option value="">Selecione um produto</option></select>
+          </label>
+          <label>Quantidade
+            <input id="saleQuantity" type="number" min="1" value="1" required>
+          </label>
+          <label>Valor total do pedido (R$)
+            <input id="saleValue" type="text" inputmode="decimal" placeholder="Ex.: 15,00" required>
+          </label>
+          <label>Observação <span>(opcional)</span>
+            <input id="saleNote" type="text" maxlength="80" placeholder="Ex.: entrega, adicional...">
+          </label>
+          <button class="primary-btn" type="submit">Salvar anotação</button>
+        </form>
+      </section>
+
+      <section class="panel product-panel">
+        <div class="panel-title"><h2>Cadastrar produto</h2><p>Os produtos cadastrados aparecem ao anotar pedidos.</p></div>
+        <form class="product-form" id="productForm">
+          <label>Nome do produto
+            <input id="productName" type="text" maxlength="60" placeholder="Ex.: Açaí 500 ml" required>
+          </label>
+          <button class="secondary-btn" type="submit">Adicionar produto</button>
+        </form>
+        <div class="product-list-wrap">
+          <h3>Produtos cadastrados</h3>
+          <ul id="productList" class="product-list"></ul>
+        </div>
+      </section>
+    </div>
+
+    <section class="panel records-panel">
+      <div class="records-head">
+        <div class="panel-title"><h2>Anotações</h2><p>Consulte ou apague uma anotação feita por engano.</p></div>
+        <label class="date-filter">Ver dia
+          <input id="filterDate" type="date">
+        </label>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Data</th><th>Produto</th><th>Qtd.</th><th>Valor</th><th>Observação</th><th class="print-hide">Ação</th></tr></thead>
+          <tbody id="salesTable"></tbody>
+        </table>
+      </div>
+      <p id="emptySales" class="empty-message">Ainda não há anotações para este dia.</p>
+    </section>
+  </main>
+
+  <section id="printArea" class="print-report" aria-hidden="true">
+    <header>
+      <p>Açaí & Sorveteria</p>
+      <h1>Total de vendas no dia</h1>
+      <p id="printDate"></p>
+    </header>
+    <section class="print-summary">
+      <div><span>Total de vendas</span><strong id="printTotal"></strong></div>
+      <div><span>Total de produtos vendidos</span><strong id="printItems"></strong></div>
+      <div><span>Pedidos anotados</span><strong id="printOrders"></strong></div>
+    </section>
+    <table>
+      <thead><tr><th>Data</th><th>Produto</th><th>Qtd.</th><th>Valor</th><th>Observação</th></tr></thead>
+      <tbody id="printTable"></tbody>
+    </table>
+    <footer>Relatório gerado pelo Caderno Virtual.</footer>
+  </section>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

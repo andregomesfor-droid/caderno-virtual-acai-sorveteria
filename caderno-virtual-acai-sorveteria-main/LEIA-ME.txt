@@ -1,0 +1,12 @@
+CADERNO VIRTUAL — AÇAÍ E SORVETERIA
+
+Como usar:
+1. Abra o arquivo "index.html" com dois cliques.
+2. Primeiro cadastre os produtos.
+3. A cada pedido que sair, preencha data, produto, quantidade e valor total e clique em "Salvar anotação".
+4. No fim do dia, selecione a data desejada e clique em "Gerar / imprimir PDF".
+5. Na janela de impressão, escolha "Salvar como PDF". O relatório já está configurado para papel ofício.
+
+Importante:
+- As anotações ficam salvas somente neste navegador e neste computador.
+- Para não perder os dados, use sempre o mesmo navegador para abrir o sistema.
