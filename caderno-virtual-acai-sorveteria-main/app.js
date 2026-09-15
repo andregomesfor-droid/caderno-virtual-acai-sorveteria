@@ -94,7 +94,8 @@ function carregarProdutos() {
     const btnEditar = document.createElement("button");
     btnEditar.textContent = "Editar";
     btnEditar.className = "text-btn";
-    btnEditar.style.marginRight = "10px";
+    btnEditar.style.color = "#0066cc";
+    btnEditar.style.marginRight = "8px";
     btnEditar.style.background = "none";
     btnEditar.style.border = "none";
     btnEditar.style.cursor = "pointer";
@@ -103,6 +104,7 @@ function carregarProdutos() {
     const btnExcluir = document.createElement("button");
     btnExcluir.textContent = "Excluir";
     btnExcluir.className = "text-btn";
+    btnExcluir.style.color = "#cc0000";
     btnExcluir.style.background = "none";
     btnExcluir.style.border = "none";
     btnExcluir.style.cursor = "pointer";
@@ -203,7 +205,6 @@ function salvarVenda(e) {
 
   salvarVendas(vendas);
   
-  // Limpa formulário mantendo a data atual
   const dataAtual = saleDate.value;
   saleForm.reset();
   saleDate.value = dataAtual;
